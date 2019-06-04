@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Kino_tasemetöö.Models.KinoModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kinokava</h2>
+
+<p>
+    @Html.ActionLink("Lisa uus seanss(Admin)", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Film)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kestuvus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Algus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Film)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kestuvus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Algus)
+        </td>
+        <td>
+            @Html.ActionLink("Vaata Lähemalt", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Muuda(Admin)", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Eemalda(Admin)", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

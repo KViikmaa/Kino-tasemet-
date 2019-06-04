@@ -1,0 +1,51 @@
+﻿@model Kino_tasemetöö.Models.KinoModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Filmi info</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Film)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Film)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kestuvus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kestuvus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Algus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Algus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Kinokava", "Index") |
+    @Html.ActionLink("Osta pilet", "Pilets", new { id = Model.Id }) |
+    @Html.ActionLink("Muuda(Admin)", "Edit", new { id = Model.Id })
+</p>

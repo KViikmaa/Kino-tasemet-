@@ -29,5 +29,9 @@ namespace Kino_tasemetöö.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Kino_tasemetöö.Models.KinoModels> KinoModels { get; set; }
+
+        public System.Data.Entity.DbSet<Kino_tasemetöö.Models.Pilet> Pilets { get; set; }
     }
 }
